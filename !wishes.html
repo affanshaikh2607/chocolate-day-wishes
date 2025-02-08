@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Chocolate Day, My Love ❤</title>
+    <style>
+        body {
+            background: url('https://source.unsplash.com/1600x900/?chocolates,romantic') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 85%;
+            max-width: 600px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.3rem;
+            margin: 10px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 20px;
+            font-size: 1.3rem;
+            background: #ff4d6d;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #ff1e4d;
+            transform: scale(1.1);
+        }
+
+        .hidden-message {
+            display: none;
+            font-size: 1.5rem;
+            color: #ffcc00;
+            margin-top: 20px;
+        }
+
+        /* Floating Hearts */
+        @keyframes hearts {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-100vh); opacity: 0; }
+        }
+
+        .heart {
+            position: fixed;
+            color: red;
+            font-size: 2rem;
+            top: 100vh;
+            animation: hearts 5s linear infinite;
+        }
+
+        /* Love Letter Box */
+        .love-letter {
+            display: none;
+            font-size: 1.2rem;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            color: #ffccff;
+            text-align: justify;
+            font-weight: bold;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Happy Chocolate Day, My Love ❤</h1>
+        <p>My sweetest <b>[sannu ]</b>, you are more precious than all the chocolates in the world!</p>
+        <p>Your kindness, your smile, and your love make my life so beautiful. 🍫💖</p>
+        <button class="btn" onclick="revealSurprise()">Click for a Surprise!</button>
+        <p id="hiddenText" class="hidden-message">I love you more than chocolate! 💖</p>
+        <div id="loveLetter" class="love-letter">
+            My Dearest <b>[Wiffey]</b>,  
+            <br><br>
+            You are the sweetest blessing in my life, the warmest hug on a cold day, and the most beautiful dream I never want to wake up from.  
+            Your love is like chocolate—sweet, comforting, and something I can never get enough of.  
+            <br><br>
+            Thank you for being you. Thank you for making my world brighter. I love you endlessly! ❤  
+        </div>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- JavaScript for Surprise -->
+    <script>
+        function revealSurprise() {
+            document.getElementById("hiddenText").style.display = "block";
+            document.getElementById("loveLetter").style.display = "block";
+            document.getElementById("bgMusic").play();
+        }
+
+        // Floating hearts with her name
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.innerHTML = "❤ [meri rasmalai ]";
+            heart.classList.add("heart");
+            document.body.appendChild(heart);
+
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        setInterval(createHeart, 700);
+    </script>
+
+</body>
+</html>
